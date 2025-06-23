@@ -1,0 +1,37 @@
+.p-organizationchart table,
+.p-organizationchart th,
+.p-organizationchart td {
+  text-align: center;
+}
+
+.p-organizationchart th,
+.p-organizationchart td {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    font-size: initial !important;
+    line-height: initial !important;
+
+}
+
+.p-organizationchart *, 
+.p-organizationchart *::before, 
+.p-organizationchart *::after {
+   box-sizing: content-box !important;
+   border-width: 1px !important;
+   border-style: revert-layer !important;
+}
+.p-organizationchart-node-content{
+  padding: 0 !important;
+}
+.p-organizationchart-table{
+  margin: auto 5px !important;
+}
+
+.p-node-toggler{
+  border: 1px solid;
+}
+.p-node-toggler i>svg{
+  margin-left: 4px;
+}
