@@ -1,7 +1,7 @@
 
 # Quantum ePay
 
-Welcome to the Quantum ePay project! This is a Laravel-based application designed for streamlined payment management. This guide will walk you through setting up the project locally using Docker (Laravel Sail) and provide access credentials for both local and hosted environments.
+Welcome to the Quantum ePay project! This guide will walk you through setting up the project locally using Docker (Laravel Sail) and provide access credentials for both local and hosted environments.
 
 Live Demo Access:
 A live version of the project is hosted at:
