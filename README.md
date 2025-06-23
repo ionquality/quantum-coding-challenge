@@ -1,66 +1,83 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Quantum ePay
 
-## About Laravel
+Welcome to the Quantum ePay project! This is a Laravel-based application designed for streamlined payment management. This guide will walk you through setting up the project locally using Docker (Laravel Sail) and provide access credentials for both local and hosted environments.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Live Demo Access:
+A live version of the project is hosted at:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+https://quantum.accuratesteel.net
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Email: admin@quantumepay.com
 
-## Learning Laravel
+Password: quantum
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🚀 Local Development Setup
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 1. Clone the Repository
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+git clone [https://github.com/your-username/quantum-epay.git](https://github.com/ionquality/quantum-coding-challenge.git)
+cd quantum-coding-challenge
+2. Install PHP Dependencies
+Ensure you have Composer installed, then run:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+composer install
+3. Install Frontend Dependencies
 
-### Premium Partners
+npm install
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+4. Configure the Environment
+   
+Create a .env file in the project root:
+Edit the following database environment variables in your .env:
 
-## Contributing
+DB_DATABASE=laravel
+DB_USERNAME=sail
+DB_PASSWORD=password
+These are the default credentials for the MySQL container used by Laravel Sail.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. Start the Application Using Sail
+Start the Docker containers using:
 
-## Code of Conduct
+./vendor/bin/sail up
+This will build and start the Laravel Sail containers for PHP, MySQL, Redis, and more.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6. Run Migrations and Seeders
+Once the containers are running, initialize the database:
 
-## Security Vulnerabilities
+./vendor/bin/sail artisan migrate:fresh --seed
+This will drop all existing tables, recreate them, and populate the database with sample data.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Default Admin Credentials
+After running the seeders, a default admin user will be available:
 
-## License
+Email: admin@quantumepay.com
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Password: quantum
+
+System Requirements
+While Laravel Sail manages most dependencies through Docker, you’ll still need the following installed on your system:
+
+Docker (latest stable)
+
+Docker Compose
+
+Composer (latest stable)
+
+Node.js & npm
+
+Running Tests
+To run feature or unit tests:
+
+./vendor/bin/sail artisan test
+Or, if PHPUnit is installed globally:
+php artisan test
+
+Useful Sail Commands
+
+./vendor/bin/sail artisan migrate          # Run migrations
+./vendor/bin/sail artisan db:seed          # Seed the database
+./vendor/bin/sail npm run dev              # Compile frontend assets
+./vendor/bin/sail tinker                   # Run Laravel REPL
