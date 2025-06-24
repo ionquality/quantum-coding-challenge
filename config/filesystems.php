@@ -55,15 +55,7 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
-        'digitalocean' => [
-            'driver' => 's3',
-            'key' => 'YDDI7UJ7QRZKCSDIDSOR',
-            'secret' => '5JQnrfcaP7BHU2XjD9bAriaq+osL8v3SlvIn6PHwr/w',
-            'endpoint' => 'https://nyc3.digitaloceanspaces.com',
-            'region' => 'nyc3',
-            'bucket' => 'simpltrakstorage',
-            'visibility' => 'public',
-        ],
+    
 
     ],
 
